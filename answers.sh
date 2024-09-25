@@ -48,8 +48,8 @@ SELECT name FROM students
 WHERE points=(SELECT max(points) FROM students);
 SELECT avg(points) FROM students;
 SELECT count(name) FROM students
-WHERE name LIKE '%s%';
-SELECT name FROM students
 WHERE points=500;
+SELECT name FROM students
+WHERE name LIKE '%s%';
 SELECT name FROM students
 ORDER BY points DESC;
