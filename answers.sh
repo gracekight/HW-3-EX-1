@@ -1,3 +1,4 @@
+##Basic Queries
 SELECT Name FROM students;
 SELECT * FROM students
     WHERE age > 30;
@@ -11,7 +12,7 @@ UPDATE students SET points=400
 UPDATE students SET points=100 
     WHERE name='Alex';
 
-
+##Create Table
 CREATE TABLE graduates(
 	ID INTEGER PRIMARY KEY AUTOINCREMENT,
 	Name TEXT NOT NULL UNIQUE,
@@ -29,6 +30,7 @@ SELECT * FROM graduates;
 DELETE FROM students WHERE Name='Layal';
 SELECT * FROM students;
 
+##Joins
 SELECT employees.Name, employees.company, companies.Date
 FROM employees
 INNER JOIN companies ON employees.company=companies.name;
@@ -40,3 +42,14 @@ SELECT companies.name
 FROM companies 
 INNER JOIN employees on companies.name=employees.company
 WHERE employees.role='Graphic Designer';
+
+##Count & Filter
+SELECT name FROM students
+WHERE points=(SELECT max(points) FROM students);
+SELECT avg(points) FROM students;
+SELECT count(name) FROM students
+WHERE name LIKE '%s%';
+SELECT name FROM students
+WHERE points=500;
+SELECT name FROM students
+ORDER BY points DESC;
